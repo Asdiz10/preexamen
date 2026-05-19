@@ -9,6 +9,12 @@
         border-width: 3px;
         border-color: orange;
       }
+
+      .tarjeta{
+        border-color: black;
+        background-color: antiquewhite;
+        gap: 20px;
+      }
     </style>
   </head>
   <body class="flex justify-center flex-col items-center">
@@ -130,7 +136,17 @@
 
 
 function pintarGuitarras(){
-    
+    for(let i = 0; i < guitarras.length; i++){
+        
+        miDiv5.innerHTML += `
+            <div class="tarjeta">
+                <h3>${guitarras[i].marca} - ${guitarras[i].modelo}</h3>
+                <p>Tipo: ${guitarras[i].tipo}</p>
+                <p>Precio: <strong>${guitarras[i].precio}€</strong></p>
+            </div>
+        
+        `
+    }
 }
 btngui.addEventListener("click", pintarGuitarras)
 
