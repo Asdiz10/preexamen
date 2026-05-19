@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>REPASO</title>
+    <style>
+      .divContenido {
+        border-width: 3px;
+        border-color: orange;
+      }
+    </style>
+  </head>
+  <body class="flex justify-center flex-col items-center">
+    <h1>PRE-EXAMEN</h1>
+    <div class="flex gap-5">
+      <div class="border p-10 w-50 mt-5 items-center flex flex-col gap-2">
+        <button class="border p-2" id="boton">Pulsar</button>
+        <button id="btt" class="border p-2">Limpiar</button>
+      </div>
+      <div id="divv"></div>
+
+      <div class="border p-10 w-50 mt-5 items-center flex flex-col gap-2">
+        <h2>EJERCICIO5</h2>
+        <input id="iptt" type="text" placeholder="Nombre" />
+        <select name="" id="sele">
+          <option value="SMX2">smx2</option>
+          <option value="DAW2">daw2</option>
+        </select>
+        <button id="buu">Insertar alumno</button>
+
+        <ul id="div2"></ul>
+      </div>
+
+      <div class="border p-10 w-50 mt-5 items-center flex flex-col gap-2">
+        <input id="imagen" type="text" placeholder="http://mifotoperfil.jpg" />
+        <button id="buton" class="border rounded p-2">Insertar</button>
+      </div>
+      <div class="border w-200 h-200" id="div3"></div>
+    </div>
+
+
+    <div class="flex flex-col items-center">
+        <section class="border p-20 mt-20"> 
+            GUITARRAS DISPONIBLES
+            <div id="div5"></div>
+        </section>
+        <button id="bot" class="border rounded w-20">mostrar</button>
+    </div>
+
+    <script>
+      const btn = document.querySelector("#boton");
+      const miDiv = document.querySelector("#divv");
+      const btlimpia = document.querySelector("#btt");
+
+      function hola() {
+        miDiv.innerHTML = "Hola que tal, como estas?";
+        miDiv.classList.add("divContenido");
+      }
+      btn.addEventListener("click", hola);
+
+      function adiós() {
+        miDiv.classList.remove("divContenido");
+        miDiv.innerHTML = " ";
+      }
+      btlimpia.addEventListener("click", adiós);
+
+      let miDiv2 = document.querySelector("#div2");
+      const sl = document.querySelector("#sele");
+      const btn1 = document.querySelector("#buu");
+      let ipt = document.querySelector("#iptt");
+
+      function alumnos() {
+        miDiv2.innerHTML += `<li>${ipt.value} - ${sl.value}</li>`;
+      }
+      btn1.addEventListener("click", alumnos);
+
+      let miDiv3 = document.querySelector("#div3");
+      let iptimg = document.querySelector("#imagen");
+      const btnimg = document.querySelector("#buton");
+
+      function img() {
+        miDiv3.innerHTML = ` <img src="${iptimg.value}">
+        `;
+      }
+      btnimg.addEventListener("click", img);
+
+
+
+
+
+      const btngui = document.querySelector("#bot")
+      let miDiv5 = document.querySelector("#div5")
+
+
+
+      const guitarras = [
+  {
+    id: 1,
+    marca: "Fender",
+    modelo: "Stratocaster",
+    tipo: "Eléctrica",
+    precio: 1200
+  },
+  {
+    id: 2,
+    marca: "Gibson",
+    modelo: "Les Paul",
+    tipo: "Eléctrica",
+    precio: 1800
+  },
+  {
+    id: 3,
+    marca: "Yamaha",
+    modelo: "FG800",
+    tipo: "Acústica",
+    precio: 250
+  },
+ {
+    id: 4,
+    marca: "Fender",
+    modelo: "Telecaster",
+    tipo: "Eléctrica",
+    precio: 1200
+  }
+
+ ];
+
+
+
+
+function pintarGuitarras(){
+    
+}
+btngui.addEventListener("click", pintarGuitarras)
+
+
+
+      
+
+
+
+
+
+
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </body>
+</html>
